@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <header class="page-header">
+        <div class="video-bg">
+            <video src="{% static 'assets/videos/video.mp4' %}" autoplay muted loop></video>
+        </div>
+        <!-- end video-bg -->
+        <div class="inner">
+            <h2 data-text="CONTACT US">CONTACT US</h2>
+            <p>Ready to tell your brand story? We craft compelling content that engages audiences. Let's connect.</p>
+        </div>
+        <!-- end inner -->
+        <ul class="social-media">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+        </ul>
+        <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+        <!-- end scroll-down -->
+    </header>
+    <!-- end page-header -->
+    <div class="page-header-spacing"></div>
+    <!-- end page-header-spacing -->
+    <main>
+        <section class="say-hello" style="text-align: center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>We’d love to hear from you.<br>
+                            Let's talk about it!</h3>
+                    </div>
+                    <!-- end col-12 -->
+                    <div class="col-md-6">
+                        <div class="contact-box">
+                            <span>Phone :</span>
+                            <a href="#">+91 96639 94748</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="contact-box">
+                            <span>E-mail :</span>
+                            <a href="#">connect@brandxpt.com</a>
+                        </div>
+
+                    </div>
+                    <!-- end col-6 -->
+                    <div class="col-12">
+                        <div class="contact-box">
+                            <span>Address :</span>
+                            <p>
+                                Pai Layout<br>
+                                Bengaluru, 560029<br>
+                                India
+                            </p>
+                            <a href="#" class="map-link" data-toggle="modal" data-target="#map-box">Click for map</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12" style="text-align: center">
+                        <form class="row inner" id="contact" name="contact" action="{% url 'contact' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group col-sm-6 col-12">
+                                <label><span>Your name</span></label>
+                                <input type="text" name="name" id="name" required>
+                            </div>
+                            <!-- end form-group -->
+                            <div class="form-group col-sm-6 col-12">
+                                <label><span>E-mail</span></label>
+                                <input type="text" name="email" id="email" required>
+                            </div>
+                            <!-- end form-group -->
+                            <div class="form-group col-12">
+                                <label><span>Message</span></label>
+                                <textarea name="message" id="message" required></textarea>
+                            </div>
+                            <!-- end form-group -->
+                            <div class="form-group col-12">
+                                <button id="submit" type="submit" name="submit">SUBMIT</button>
+                            </div>
+                            <!-- end form-group -->
+                        </form>
+                        <!-- end form -->
+                        <div id="success" class="alert alert-success" role="alert"> Your message was sent successfully!
+                            We will be in touch as soon as we can.
+                        </div>
+                        <!-- end success -->
+                        <div id="error" class="alert alert-danger" role="alert"> Something went wrong, try refreshing
+                            and submitting the form again.
+                        </div>
+                        <!-- end error -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- end say-hello -->
+        <footer class="footer">
+            <div class="container">
+                <img src="{% static 'assets/images/logo.png' %}" alt="Image">
+                <h2>Don't be shy and<br>
+                    talk to us?</h2>
+                <h5>Say hello@brandxpt.com </h5>
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                </ul>
+                <span>© 2018 Unicord | All Rights Reserved</span></div>
+            <!-- end container -->
+        </footer>
+        <!-- end footer -->
+    </main>
+{% endblock %}

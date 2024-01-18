@@ -1,0 +1,64 @@
+{% load static %}
+<nav class="navigation-menu">
+  <div class="green-layer"></div>
+  <div class="black-layer"></div>
+  <div class="inner">
+    <ul>
+      <li>
+          <a href="#">BrandXPT</a>
+{#      	 <ul>#}
+{#          <li><a href="home/index.html">Slider</a></li>#}
+{#          <li><a href="index-video-bg.html">Video BG</a></li>#}
+{#          <li><a href="index-particles.html">Particles</a></li>#}
+{#          <li><a href="index-motion-blur.html">Motion Blur</a></li>#}
+{#          <li><a href="index-animation.html">Animation</a></li>#}
+{#        </ul>#}
+      </li>
+      <li><a href="{% url 'home' %}">Digital Solutions</a></li>
+      <li><a href="#">E-commerce Support</a>
+{#        <ul>#}
+{#          <li><a href="showcases-four-cols.html">4 Columns</a></li>#}
+{#          <li><a href="showcases-three-cols.html">3 Columns</a></li>#}
+{#          <li><a href="showcases-two-cols.html">2 Columns</a></li>#}
+{#        </ul>#}
+      </li>
+      <li><a href="#">Thinking Lab</a></li>
+      <li><a href="#">More</a>
+      <ul
+              style="opacity: 1; visibility: visible; transition-delay: 2s;"
+      >
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+{#          <li><a href="#">Animation</a></li>#}
+        </ul>
+      </li>
+{#      <li><a href="say-hello.html">Say Hello</a></li>#}
+    </ul>
+    <address>
+    Pai Layout<br>
+    Bengaluru, 560029<br>
+    074-753 5875
+    </address>
+  </div>
+  <!-- end inner -->
+</nav>
+<!-- end navigation-menu -->
+  <nav class="navbar">
+    <div class="logo"> <a href="{% url 'home' %}"><img src="{% static 'assets/images/logo-brandxpt.png' %}" alt="Image"></a> </div>
+    <!-- end logo -->
+    <div class="email-us">Say <a href="#"><span>hello</span>@brandxpt.com</a></div>
+    <!-- end email-us -->
+{#    <div class="languages"> <a href="#" class="active">EN</a> <a href="#">RU</a> </div>#}
+    <!-- end languages -->
+    <div class="sandwich-nav"> <b>MENU</b>
+      <div class="sandwich-btn circle" id="sandwich-btn" data-dist="7"> <span></span> <span></span> </div>
+      <!-- end sandwich-btn -->
+    </div>
+    <!-- end sandwich-nav -->
+  </nav>
+  <!-- end navbar -->
+
+<audio id="link" src="{% static 'assets/audio/link.mp3' %}" preload="auto"></audio>
+<audio id="hover-audio" src="{% static 'assets/audio/hover.mp3' %}" preload="auto"></audio>

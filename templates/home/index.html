@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <header class="header" xmlns:xlink="">
+        <div class="slider">
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-inner bg-image"
+                             data-background="{% static 'assets/images/home-1.webp' %}"></div>
+                        <!-- end slide-inner -->
+                    </div>
+                    <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner bg-image"
+                             data-background="{% static 'assets/images/home-2.webp' %}"></div>
+                        <!-- end slide-inner -->
+                    </div>
+                    <!-- end swiper-slide -->
+                    <div class="swiper-slide">
+                        <div class="slide-inner bg-image"
+                             data-background="{% static 'assets/images/home-3.webp' %}"></div>
+                        <!-- end slide-inner -->
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-inner bg-image"
+                             data-background="{% static 'assets/images/home-2.webp' %}"></div>
+                        <!-- end slide-inner -->
+                    </div>
+                    <!-- end swiper-slide -->
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Web Design
+                        <a href="#">Explore Case Study
+                            <div class="plus">+</div>
+                        </a>
+                    </div>
+                    <!-- end swiper-slide -->
+                    <div class="swiper-slide">Photo Shoot<a href="#">Explore Case Study
+                        <div class="plus">+</div>
+                    </a></div>
+                    <!-- end swiper-slide -->
+                    <div class="swiper-slide">Ecommerce Support<a href="#">Explore Case Study
+                        <div class="plus">+</div>
+                    </a></div>
+                    <div class="swiper-slide">Events & Workshop<a href="#">Explore Case Study
+                        <div class="plus">+</div>
+                    </a></div>
+                    <!-- end swiper-slide -->
+                </div>
+            </div>
+        </div>
+        <!-- end slider -->
+        <ul class="social-media">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            {#            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>#}
+            {#            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>#}
+            {#            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>#}
+        </ul>
+        <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+        <!-- end scroll-down -->
+    </header>
+    <!-- end header -->
+    <div class="header-spacing"></div>
+    <!-- end header-spacing -->
+    <main>
+        <!-- end features-content -->
+        <section class="full-media-content bg-image" data-background="{% static 'assets/images/aboutus.webp' %}">
+            <div class="sides">
+                <figure class="wow fadeInLeft">
+                    {#                    <video><source src="{% static 'assets/videos/video.mp4' %}"></video>#}
+                    <img src="https://themezinho.net/unicord/images/office01.jpg" alt="Image">
+                </figure>
+            </div>
+            <!-- end sides -->
+            <div class="sides inner-content">
+                <div class="inner wow fadeInUp">
+                    <h5>About BrandXPT</h5>
+                    <h2>INNOVATION</h2>
+                    <p>BrandXPT is a creative digital agency, composed of creative designers & experienced developers.
+                        You’ll have your own individual apartment and facilities which are inspired by the luxurious
+                        life you want to live.</p>
+                    <a href="#">TAKE A LOOK</a></div>
+                <!-- end inner -->
+            </div>
+            <!-- end sides -->
+        </section>
+        <!-- end full-media-content -->
+        <section class="works bg-image" style="padding-top: 20px;"
+                 data-background="{% static 'assets/images/service-red.webp' %}">
+            <h1 style="color: white; font-weight: bold; padding-left: 27%;">SERVICES</h1>
+            <br><br><br>
+
+            <ul>
+                {% for service in services %}
+                    <li class="wow fadeInUp">
+                        {#                        <a href="Hello.html">#}
+                        <figure data-tilt><img src="{{ service.image.url }}" alt="Image" class="thumb">
+                            <figcaption><img src="{{ service.image.url }}" alt="Image"
+                                             class="brand">
+                                <h3>{{ service.title }}</h3>
+                                <small>{{ service.description }}</small> <a href="case-details.html">CASE
+                                    DETAILS</a>
+                            </figcaption>
+                        </figure>
+                        {#                        </a>#}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <!-- end works -->
+
+        {#        <section class="features-content">#}
+        {#            <div class="container">#}
+        {#                <div class="row">#}
+        {#                    <div class="col-lg-5 wow fadeInLeft">#}
+        {#                        <h2>Services WITH BrandXPT</h2>#}
+        {#                        <h6>All of our products exist to help you customize your website and add some advanced#}
+        {#                            functionality lacks.</h6>#}
+        {#                    </div>#}
+        {#                    <!-- end col-5 -->#}
+        {#                    <div class="col-lg-7">#}
+        {#                        <div class="row inner">#}
+        {#                            <div class="col-md-4 wow fadeInUp"><img src="{% static 'assets/images/icon01.png' %}"#}
+        {#                                                                    alt="Image">#}
+        {#                                <h4>CREATIVE & DIGITAL BRANDING AGENCY</h4>#}
+        {#                                <p> provides a fantastic living experience.</p>#}
+        {#                                <a href="#">LEARN MORE</a></div>#}
+        {#                            <!-- end col-4 -->#}
+        {#                            <div class="col-md-4 wow fadeInUp"><img src="{% static 'assets/images/icon02.png' %}"#}
+        {#                                                                    alt="Image">#}
+        {#                                <h4>WEBSITE DESIGN</h4>#}
+        {#                                <p>Website and add some advanced lacks.</p>#}
+        {#                                <a href="#">LEARN MORE</a></div>#}
+        {#                            <!-- end col-4 -->#}
+        {#                            <div class="col-md-4 wow fadeInUp"><img src="{% static 'assets/images/icon03.png' %}"#}
+        {#                                                                    alt="Image">#}
+        {#                                <h4>PHOTOSHOOT & ADOFLIMS</h4>#}
+        {#                                <p>Website and add some advanced functionality.</p>#}
+        {#                                <a href="#">LEARN MORE</a></div>#}
+        {#                            <!-- end col-4 -->#}
+        {#                            <div class="col-md-4 wow fadeInUp"><img src="{% static 'assets/images/icon02.png' %}"#}
+        {#                                                                    alt="Image">#}
+        {#                                <h4>ECOMMERCE SUPPORT</h4>#}
+        {#                                <p>Website and add some advanced functionality</p>#}
+        {#                                <a href="#">LEARN MORE</a></div>#}
+        {#                            <!-- end col-4 -->#}
+        {#                            <div class="col-md-4 wow fadeInUp"><img src="{% static 'assets/images/icon03.png' %}"#}
+        {#                                                                    alt="Image">#}
+        {#                                <h4>EVENTS & WORKSHOP</h4>#}
+        {#                                <p>Website and add some advanced functionality</p>#}
+        {#                                <a href="#">LEARN MORE</a></div>#}
+        {#                            <!-- end col-4 -->#}
+        {#                        </div>#}
+        {#                        <!-- end row inner -->#}
+        {#                    </div>#}
+        {#                    <!-- end col-7 -->#}
+        {#                </div>#}
+        {#                <!-- end row -->#}
+        {#            </div>#}
+        {#            <!-- end container -->#}
+        {#        </section>#}
+
+
+        <section class="features-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 wow fadeInLeft">
+                        <h2 style="color: #5e7003">Look WHAT We Do.</h2>
+                        <h6>We create exceptional digital creatives that looks cool.</h6>
+                    </div>
+                    <!-- end col-5 -->
+                    <div class="col-lg-7">
+                        <div class="row inner">
+                            {% for project in projects %}
+                                <div class="col-md-4 wow fadeInUp">
+                                    <a href="{% url 'projects' %}"><img
+                                            style=" border-radius: 5%; height: 100%; width: 100%"
+                                            src="{{ project.img.url }}">
+                                        <h3 style="color: #24933d; font-weight: normal">{{ project.title }}</h3>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- end row inner -->
+                    </div>
+                    <!-- end col-7 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+
+
+        <section class="project-card">
+
+        </section>
+
+        <section class="full-media-content">
+            <div class="video-bg">
+                <video src="{% static 'assets/videos/video2.mp4' %}" autoplay muted loop></video>
+            </div>
+            <!-- end video-bg -->
+            <div class="sides hide-mobile">
+            </div>
+            <!-- end sides -->
+            <div class="sides inner-content">
+                <div class="inner">
+                    <h5>Marketing Secret</h5>
+                    <h2>DOWNLOAD</h2>
+                    <form action="{% url 'subscribe' %}" method="post">
+                        {% csrf_token %}
+                        <input type="email" name="email"
+                               style="background-color:#333; color:#fff; padding:10px; border:2px solid #555; border-radius:5px; outline:none; width:100%;"
+                               placeholder="Enter your email">
+                        {#                    <p>To create a powerful project once, a bit of luck is enough. To generate good products regularly,#}
+                        {#                        you need a strong foundation of experience and skills.</p>#}
+                        <br><br>
+                        <button type="submit">DOWNLOAD NOW</button>
+                    </form>
+                </div>
+                <!-- end inner -->
+            </div>
+            <!-- end sides -->
+        </section>
+
+
+        <section class="logos">
+            <div class="container">
+                <ul>
+                    <li class="wow fadeInUp">
+                        <figure><img src="{% static 'assets/images/logo01.jpg' %}" alt="Image">
+                            <h6>BIRD DIGITAL INC.</h6>
+                        </figure>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure><img src="{% static 'assets/images/logo02.jpg' %}" alt="Image">
+                            <h6>FOX ENTERTAINMENT</h6>
+                        </figure>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure><img src="{% static 'assets/images/logo03.jpg' %}" alt="Image">
+                            <h6>EAGLE SOLUTIONS</h6>
+                        </figure>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure><img src="{% static 'assets/images/logo04.jpg' %}" alt="Image">
+                            <h6>DEERS MEDICAL INC.</h6>
+                        </figure>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure><img src="{% static 'assets/images/logo05.jpg' %}" alt="Image">
+                            <h6>BIRD NATURAL PARKS</h6>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end logos -->
+        {% include 'footer.html' %}
+        <!-- end footer -->
+    </main>
+{% endblock %}

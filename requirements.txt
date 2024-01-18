@@ -1,0 +1,6 @@
+Django
+django-extensions
+whitenoise
+Pillow
+django-ckeditor
+django-resized
