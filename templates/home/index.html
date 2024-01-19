@@ -82,12 +82,12 @@
             <!-- end sides -->
             <div class="sides inner-content">
                 <div class="inner wow fadeInUp">
-                    <h5>About BrandXPT</h5>
-                    <h2>INNOVATION</h2>
+                    <h5>About</h5>
+                    <h2>BRANDXPT</h2>
                     <p>BrandXPT is a creative digital agency, composed of creative designers & experienced developers.
                         You’ll have your own individual apartment and facilities which are inspired by the luxurious
                         life you want to live.</p>
-                    <a href="#">TAKE A LOOK</a></div>
+                    <a href="#">KNOW MORE</a></div>
                 <!-- end inner -->
             </div>
             <!-- end sides -->
@@ -103,10 +103,10 @@
                     <li class="wow fadeInUp">
                         {#                        <a href="Hello.html">#}
                         <figure data-tilt><img src="{{ service.image.url }}" alt="Image" class="thumb">
-                            <figcaption><img src="{{ service.image.url }}" alt="Image"
+                            <figcaption><img src="{% static 'assets/images/logo-brandxpt.png' %}" alt="Image"
                                              class="brand">
                                 <h3>{{ service.title }}</h3>
-                                <small>{{ service.description }}</small> <a href="case-details.html">CASE
+                                <small>{{ service.description }}</small> <a href="{% url 'home' %}">MORE
                                     DETAILS</a>
                             </figcaption>
                         </figure>
@@ -205,7 +205,8 @@
 
         <section class="full-media-content">
             <div class="video-bg">
-                <video src="{% static 'assets/videos/video2.mp4' %}" autoplay muted loop></video>
+{#                <video src="{% static 'assets/videos/video2.mp4' %}" autoplay muted loop></video>#}
+                <img href="{% static 'assets/images/aboutus.webp' %}"/>
             </div>
             <!-- end video-bg -->
             <div class="sides hide-mobile">
