@@ -10,6 +10,14 @@ def home(request):
     return render(request, 'home/index.html', context)
 
 
+def brand_growth(request):
+    return render(request, 'home/brand_growth.html')
+
+
+def digital_solutions(request):
+    return render(request, 'home/digital_solutions.html')
+
+
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
     context = {'project': project}
@@ -45,5 +53,3 @@ def subscribe(request):
         Subscribe.objects.create(email=email).save()
         print(email)
         return HttpResponse('Thank you for subscribing!')
-
-
