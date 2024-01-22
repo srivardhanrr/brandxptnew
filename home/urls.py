@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import home, project_detail, contact, service, project, subscribe, brand_growth, digital_solutions
-
+from .views import home, project_detail, contact, service, project, subscribe, brand_growth, digital_solutions, ecommerce_support
 
 urlpatterns = [
     path('', home, name="home"),
@@ -11,4 +10,5 @@ urlpatterns = [
     path('subscribe/', subscribe, name='subscribe'),
     path('brand-growth/', brand_growth, name="brand_growth"),
     path('digital_solutions/', digital_solutions, name="digital_solutions"),
+    path('ecommerce_support/', ecommerce_support, name="ecommerce_support"),
 ]

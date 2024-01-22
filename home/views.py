@@ -18,6 +18,10 @@ def digital_solutions(request):
     return render(request, 'home/digital_solutions.html')
 
 
+def ecommerce_support(request):
+    return render(request, 'home/ecommerce_support.html')
+
+
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
     context = {'project': project}
