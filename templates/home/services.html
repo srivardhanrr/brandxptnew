@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <header class="page-header">
+        <div class="video-bg">
+            <video src="https://sheltersearch.b-cdn.net/video.mp4" autoplay muted loop></video>
+        </div>
+        <!-- end video-bg -->
+        <div class="inner">
+            <h2 data-text="SERVICES">SERVICES</h2>
+            <p>Services Offered by BrandXPT.</p>
+        </div>
+        <!-- end inner -->
+        <ul class="social-media">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+        <!-- end scroll-down -->
+    </header>
+    <!-- end page-header -->
+    <div class="page-header-spacing"></div>
+    <!-- end page-header-spacing -->
+    <main>
+
+        <section class="works bg-image" style="padding-top: 20px;"
+                 data-background="{% static 'assets/images/digital_solutions.webp' %}">
+            <h1 style="color: white; font-weight: bold; padding-left: 27%;">SERVICES</h1>
+            <br><br><br>
+
+            <ul>
+                {% for service in services %}
+                    <li class="wow fadeInUp">
+                        {#                        <a href="Hello.html">#}
+                        <figure data-tilt><img src="{{ service.image.url }}" alt="Image" class="thumb">
+                            <figcaption><img src="{% static 'assets/images/logo-brandxpt.png' %}" alt="Image"
+                                             class="brand">
+                                <h3>{{ service.title }}</h3>
+                                <small>{{ service.description }}</small> <a href="{% url 'home' %}">MORE
+                                    DETAILS</a>
+                            </figcaption>
+                        </figure>
+                        {#                        </a>#}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <!-- end news -->
+        {% include 'footer.html' %}
+    </main>
+{% endblock %}

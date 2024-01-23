@@ -22,6 +22,10 @@ def ecommerce_support(request):
     return render(request, 'home/ecommerce_support.html')
 
 
+def about_us(request):
+    return render(request, 'home/about.html')
+
+
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
     context = {'project': project}
@@ -40,15 +44,15 @@ def contact(request):
 
 
 def service(request):
-    services = Service.objects.all().values('title', 'image', 'description')
+    services = Service.objects.all()
     context = {'services': services}
-    return render(request, 'centrix/home/services.html', context)
+    return render(request, 'home/services.html', context)
 
 
 def project(request):
     projects = Project.objects.all()
     context = {'projects': projects}
-    return render(request, 'centrix/home/projects.html', context)
+    return render(request, 'home/projects.html', context)
 
 
 def subscribe(request):
