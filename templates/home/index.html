@@ -1,6 +1,79 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extrastyles %}
+    <style>
+
+        #testimonials {
+            background-color: #f8f9fa; /* Adjust background color if needed */
+        }
+
+        .testimonial-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .home-testimonial {
+            background-color: #231834;
+            height: 380px
+        }
+
+        .home-testimonial-bottom {
+            background-color: #f8f8f8;
+            transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        {#position: relative;#}{#height: 130px;#}{#top: 190px#}
+        }
+
+        .home-testimonial h3 {
+            color: var(--orange);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase
+        }
+
+        .home-testimonial h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700
+        }
+
+        .testimonial-inner {
+            position: relative;
+            top: -174px
+        }
+
+        .testimonial-pos {
+            position: relative;
+            top: 24px
+        }
+
+        .testimonial-inner .tour-desc {
+            border-radius: 5px;
+            padding: 40px
+        }
+
+        .color-grey-3 {
+            font-family: "Montserrat", Sans-serif;
+            font-size: 14px;
+            color: #6c83a2
+        }
+
+        .link-name {
+            font-family: "Montserrat", Sans-serif;
+            font-size: 14px;
+            color: #6c83a2
+        }
+
+        .link-position {
+            font-family: "Montserrat", Sans-serif;
+            font-size: 12px;
+            color: #6c83a2
+        }
+    </style>
+{% endblock %}
 
 {% block body %}
     <header class="header" xmlns:xlink="">
@@ -182,9 +255,9 @@
                             {% for project in projects %}
                                 <div class="col-md-4 wow fadeInUp">
                                     <a href="{% url 'projects' %}"><img
-                                            style=" border-radius: 5%; height: 100%; width: 100%"
+                                            style=" border-radius: 3%; height: 100%; width: 100%"
                                             src="{{ project.img.url }}">
-                                        <h3 style="color: #24933d; font-weight: normal">{{ project.title }}</h3>
+                                        <h3 style="color: #036416; font-weight: bold">{{ project.title }}</h3>
                                     </a>
                                 </div>
                             {% endfor %}
@@ -198,21 +271,13 @@
             <!-- end container -->
         </section>
 
-
-        <section class="project-card">
-
-        </section>
-
-        <section class="full-media-content">
-            <div class="video-bg">
-{#                <video src="{% static 'assets/videos/video2.mp4' %}" autoplay muted loop></video>#}
-                <img href="{% static 'assets/images/aboutus.webp' %}"/>
-            </div>
+        <section class="full-media-content bg-image" data-background="{% static 'assets/images/aboutus.webp' %}">
+            
             <!-- end video-bg -->
             <div class="sides hide-mobile">
             </div>
             <!-- end sides -->
-            <div class="sides inner-content">
+            <div class="sides inner-content ">
                 <div class="inner">
                     <h5>Marketing Secret</h5>
                     <h2>DOWNLOAD</h2>
@@ -231,6 +296,48 @@
             </div>
             <!-- end sides -->
         </section>
+
+                <div style="background-color: #351059" class="container py-5">
+            <div class="row">
+                <div class="col-md-12 text-center text-white">
+                    <h2>What Our Clients Say</h2>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-10 offset-md-1">
+                    <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item text-center active text-white">
+                                <img class="rounded-circle testimonial-img"
+                                 src="{% static 'assets/images/avatar01.jpg' %}" alt="First slide">
+                                <p class="lead">
+                                    "Amazing service! The team was incredibly helpful and exceeded my expectations.
+                                    Highly recommended!"
+                                </p>
+                                <cite> - Jane Doe, Company X</cite>
+                            </div>
+                            <div class="carousel-item text-center text-white">
+                                <img class="rounded-circle testimonial-img"
+                                 src="{% static 'assets/images/avatar02.jpg' %}" alt="First slide">
+                                <p class="lead">
+                                    "Their work is top-notch. I'm very impressed with their attention to detail and
+                                    professionalism."
+                                </p>
+                                <cite> - John Smith, Company Y</cite>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <section class="logos">
@@ -265,6 +372,7 @@
             </div>
             <!-- end container -->
         </section>
+
         <!-- end logos -->
         {% include 'footer.html' %}
         <!-- end footer -->

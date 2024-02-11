@@ -6,3 +6,5 @@ admin.site.register(Service)
 admin.site.register(ServiceDetail)
 admin.site.register(Project)
 admin.site.register(Contact)
+
+
