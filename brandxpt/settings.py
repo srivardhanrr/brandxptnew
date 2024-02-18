@@ -3,7 +3,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -14,7 +13,6 @@ SECRET_KEY = 'django-insecure-m(t$9*h=m3t+o*3z8ep4ouypwqm4%!r3#78ji#u-0ln_bh6g08
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -67,7 +65,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'brandxpt.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -77,7 +74,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -97,7 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -108,7 +103,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -127,3 +121,11 @@ MEDIA_ROOT = "media"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST = "mail.sheltersearch.in"
+EMAIL_HOST_USER = "alerts@sheltersearch.in"
+DEFAULT_FROM_EMAIL = "alerts@sheltersearch.in"
+EMAIL_HOST_PASSWORD = "Farhad#2@1"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+CONTACT_EMAIL = "electrochaser26@gmail.com"

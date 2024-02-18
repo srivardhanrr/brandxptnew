@@ -1,5 +1,11 @@
+import threading
+
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.template.loader import render_to_string
+
+from brandxpt import settings
 from home.models import Service, Project, Contact, Subscribe
 
 
@@ -37,6 +43,9 @@ def contact(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
+        email_subject = f'New contact: {email}: {name}'
+        email_message = f'Name: {name} \nMessage: {message}'
+        EmailThread(email_subject, email_message, ["srivardhan.singh.rathore@gmail.com"]).start()
         print(name, email, message)
         Contact.objects.create(name=name, email=email, message=message).save()
         return HttpResponse('Thank you for your message!')
@@ -58,6 +67,35 @@ def project(request):
 def subscribe(request):
     if request.POST:
         email = request.POST.get('email')
-        Subscribe.objects.create(email=email).save()
-        print(email)
+
+        context = {
+            "email": email,
+        }
+
+        plain_message = "Welcome to our Newsletter!"
+        html_message = render_to_string('emails/subscribe.html', context)
+
+        email = EmailMultiAlternatives("Welcome to our Newsletter", plain_message, from_email=settings.EMAIL_HOST_USER, to=[email])
+        email.attach_alternative(html_message, "text/html")
+        email.send()
+
+        # Subscribe.objects.create(email=email).save()
+        # EmailThread('New subscriber', f'New subscriber: {email}', ["srivardhan588@gmail.com",]).start()
         return HttpResponse('Thank you for subscribing!')
+
+
+class EmailThread(threading.Thread):
+    def __init__(self, subject, html_content, recipient_list, html_message=None):
+        self.subject = subject
+        self.recipient_list = recipient_list
+        self.html_content = html_content
+        self.html_message = html_message
+        threading.Thread.__init__(self)
+
+    def run(self):
+        message = EmailMessage(self.subject, self.html_content, settings.EMAIL_HOST_USER,
+                               self.recipient_list)
+        message.content_subtype = "html"
+        message.send(fail_silently=False)
+        print(message.to)
+        print(message.from_email)

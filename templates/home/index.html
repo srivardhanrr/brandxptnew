@@ -40,38 +40,11 @@
             font-weight: 700
         }
 
-        .testimonial-inner {
-            position: relative;
-            top: -174px
-        }
-
-        .testimonial-pos {
-            position: relative;
-            top: 24px
-        }
-
         .testimonial-inner .tour-desc {
             border-radius: 5px;
             padding: 40px
         }
 
-        .color-grey-3 {
-            font-family: "Montserrat", Sans-serif;
-            font-size: 14px;
-            color: #6c83a2
-        }
-
-        .link-name {
-            font-family: "Montserrat", Sans-serif;
-            font-size: 14px;
-            color: #6c83a2
-        }
-
-        .link-position {
-            font-family: "Montserrat", Sans-serif;
-            font-size: 12px;
-            color: #6c83a2
-        }
     </style>
 {% endblock %}
 
@@ -137,7 +110,24 @@
             {#            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>#}
             {#            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>#}
         </ul>
-        <div class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+        <div style="display: inline" class="scroll-down"><b>SCROLL DOWN</b><span></span></div>
+        <button style="display: inline;
+position: absolute;
+left: 170px;
+bottom: 30px;
+{#transform: rotate(0deg);#}
+z-index:2;
+                height: 30px;
+  line-height: 10px;
+  {#display: inline-block;#}
+  border: 2px solid #fff;
+                opacity: 50%;
+  background: #0c0c0c;
+  color: #fdfcfc;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+                " class="">More</button>
         <!-- end scroll-down -->
     </header>
     <!-- end header -->
@@ -272,7 +262,7 @@
         </section>
 
         <section class="full-media-content bg-image" data-background="{% static 'assets/images/aboutus.webp' %}">
-            
+
             <!-- end video-bg -->
             <div class="sides hide-mobile">
             </div>
@@ -297,7 +287,7 @@
             <!-- end sides -->
         </section>
 
-                <div style="background-color: #351059" class="container py-5">
+        <div style="background-color: #351059" class="container py-5">
             <div class="row">
                 <div class="col-md-12 text-center text-white">
                     <h2>What Our Clients Say</h2>
@@ -309,7 +299,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item text-center active text-white">
                                 <img class="rounded-circle testimonial-img"
-                                 src="{% static 'assets/images/avatar01.jpg' %}" alt="First slide">
+                                     src="{% static 'assets/images/avatar01.jpg' %}" alt="First slide">
                                 <p class="lead">
                                     "Amazing service! The team was incredibly helpful and exceeded my expectations.
                                     Highly recommended!"
@@ -318,7 +308,7 @@
                             </div>
                             <div class="carousel-item text-center text-white">
                                 <img class="rounded-circle testimonial-img"
-                                 src="{% static 'assets/images/avatar02.jpg' %}" alt="First slide">
+                                     src="{% static 'assets/images/avatar02.jpg' %}" alt="First slide">
                                 <p class="lead">
                                     "Their work is top-notch. I'm very impressed with their attention to detail and
                                     professionalism."

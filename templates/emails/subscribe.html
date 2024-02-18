@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to our Newsletter!</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            line-height: 1.5;
+        }
+        .cta-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img style="max-width: 100px" src="https://brandxpt.com/static/assets/images/logo-brandxpt.png" alt="Company Logo">
+            <h1>Welcome to our Newsletter!</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{ email }},</p>
+            <p>Thank you for subscribing! We're excited to share all the latest news, updates, and exclusive offers with you.</p>
+            <p>Here are the Resources as Promised:</p>
+            <a href="https://brandxpt.com">The Ultimate GoogleBusiness Checklist</a>
+            <p></p>
+            <a href="https://brandxpt.com">SEO Toolkit</a>
+            <br><br>
+{#            <p>If you'd like to change how often you get our emails, you can manage your preferences here: [Preference Link]</p>#}
+            <a href="https://brandxpt.com" class="cta-button">Visit Our Website</a>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 BrandXPT</p>
+        </div>
+    </div>
+</body>
+</html>
